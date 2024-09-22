@@ -119,3 +119,13 @@ cards.forEach((card) => {
     event.currentTarget.classList.remove('shadow-sm')
   })
 })
+
+function logMousePosition(event) {
+    const x = event.clientX;
+    const y = event.clientY;
+    console.log(`X: ${x}, Y: ${y}`);
+}
+
+// Attach the function to the 'mousemove' event
+document.addEventListener('mousemove', logMousePosition);
+
