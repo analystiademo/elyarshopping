@@ -55,7 +55,6 @@ const cartItemsListeners = () => {
   })
 }
 
-
 const renderCart = () => {
   renderBadge();
 
@@ -120,12 +119,17 @@ cards.forEach((card) => {
   })
 })
 
+// Function to log the mouse position
 function logMousePosition(event) {
-    const x = event.clientX;
-    const y = event.clientY;
-    console.log(`X: ${x}, Y: ${y}`);
+  const x = event.clientX;
+  const y = event.clientY;
+  console.log(`X: ${x}, Y: ${y}`);
+  dataLayer.push({
+    event: 'mouseMove',
+    mouseX: x,
+    mouseY: y
+  });
 }
 
 // Attach the function to the 'mousemove' event
 document.addEventListener('mousemove', logMousePosition);
-
